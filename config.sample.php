@@ -18,6 +18,10 @@ $dir = array("/Users/username/Sites/*");
 /** Your local top level domain */
 $tld = 'dev';
 
+/** Get local IP */
+exec("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'", $ips);
+$ip = $ips[0];
+
 /*
 *
 *  Icon file names you would like to display next to the link to each site. 

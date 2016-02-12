@@ -17,8 +17,8 @@
 
 		    <header>
 
-			    <h1>My Local Sites</h1>
-
+			    <h1>Local Dev Environment</h1>
+			    <h2><?= $ip; ?></h2>
 			    <nav>
 			        <ul>
 <?php
@@ -48,6 +48,7 @@
 		            echo '<li>';
 
 		            $siteroot = sprintf( 'http://%1$s.%2$s.%3$s', $project, $dirname, $tld );
+		            $shareurl = sprintf( 'http://%1$s.%2$s.xip.io', $project, $ip, $tld );
 
 		            // Display an icon for the site
 		            $icon_output = '<span class="no-img"></span>';
@@ -70,6 +71,7 @@
 		            		$displayname = $siteoptions[$project];
 		            }
 		            printf( '<a class="site" href="%1$s">%2$s</a>', $siteroot, $displayname );
+		            printf( '<a class="site" href="%1$s">Share %2$s</a>', $shareurl, $displayname );
 
 
 					// Display an icon with a link to the admin area
